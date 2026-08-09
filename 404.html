@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found — Dr. Deepti Verma</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" id="favicon-link">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Inter", "Segoe UI", Arial, sans-serif;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      color: #faf8f4;
+      background:
+        radial-gradient(ellipse 70% 55% at 50% -5%, rgba(201, 164, 88, 0.16), transparent 60%),
+        linear-gradient(180deg, #14171c 0%, #1c2027 100%);
+      padding: 2rem;
+    }
+    .seal {
+      width: 84px; height: 84px; margin: 0 auto 1.8rem; border-radius: 50%;
+      border: 1px solid rgba(201, 164, 88, 0.65); outline: 1px solid rgba(201, 164, 88, 0.22);
+      outline-offset: 5px; display: grid; place-items: center;
+      font-family: "Cormorant Garamond", Georgia, serif; font-size: 1.7rem; font-weight: 600; color: #c9a458;
+    }
+    h1 { font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(2.4rem, 7vw, 4rem); font-weight: 600; }
+    p { margin: 1rem auto 2rem; max-width: 28rem; color: rgba(250, 248, 244, 0.7); }
+    .num { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.32em; text-transform: uppercase; color: #c9a458; }
+    a.btn {
+      display: inline-block; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.14em;
+      text-transform: uppercase; color: #fff; background: #a8842c; border-radius: 999px;
+      padding: 0.95rem 1.9rem; text-decoration: none; transition: background 0.25s ease;
+    }
+    a.btn:hover { background: #c9a458; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="seal">DV</div>
+    <p class="num">Error 404</p>
+    <h1>This page has wandered off</h1>
+    <p>The page you're looking for doesn't exist or has moved. Let's take you back to Dr. Deepti Verma's home page.</p>
+    <a class="btn" href="/" id="home-link">Return Home</a>
+  </main>
+  <script>
+    /* On github.io project pages the site root is /<repo>/ — fix links accordingly */
+    (function () {
+      if (location.hostname.endsWith("github.io")) {
+        var seg = location.pathname.split("/")[1];
+        if (seg) {
+          var base = "/" + seg + "/";
+          document.getElementById("home-link").setAttribute("href", base);
+          document.getElementById("favicon-link").setAttribute("href", base + "assets/favicon.svg");
+        }
+      }
+    })();
+  </script>
+</body>
+</html>
