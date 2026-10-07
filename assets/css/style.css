@@ -977,7 +977,7 @@ h1, h2, h3, .display {
 @media (max-width: 1020px) {
   .card-grid { grid-template-columns: repeat(2, 1fr); }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
-  .about-layout { grid-template-columns: 1fr; }
+  .about-layout { grid-template-columns: minmax(0, 1fr); }
   .infobox { position: static; max-width: 30rem; }
 }
 
